@@ -1,0 +1,79 @@
+%\documentclass[twoside]{article}
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+
+\linespread{1.05}
+\usepackage{microtype}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{environ}
+% Environment to scale things
+\NewEnviron{scale}[1]{%
+  \begin{tikzpicture}
+    \node[scale=#1]{%
+      \BODY
+    };
+  \end{tikzpicture}
+}
+
+% Margins
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry}
+% Two-column layout
+\usepackage{multicol}
+% Custom captions
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}
+% Horizontal rules for tables
+\usepackage{booktabs}
+% Table & figure positioning.
+\usepackage{float}
+% Hyperlinks
+\usepackage[colorlinks,citecolor=blue]{hyperref}
+% Source code
+\usepackage{listings}
+
+% Abstract customization
+\usepackage{abstract}
+% Bold "Abstract"
+\renewcommand{\abstractnamefont}{\normalfont\bfseries}
+% Italic abstract
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
+
+% Custom titles
+\usepackage{titlesec}
+% Custom section titles
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{}
+% Custom subsection titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{}
+
+% Document title
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont
+\textbf{Learning By Teaching, or, Imitation Is the Sincerest Form of Flattery, 
+        or, Reinforced Learning (By Turning Students Into Producers (of 
+        Educational Software))}}
+
+
+% Document authors
+\author{
+\begin{tabular}{l c r}
+    Alexander Berntsen & Emil Henry Flakk \\
+    \href{mailto:alexander@plaimi.net}{alexander@plaimi.net} &
+    \href{mailto:emilhf@stud.ntnu.no}{emilhf@stud.ntnu.no}
+\end{tabular}
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent \input{txt/abstract}
+\end{abstract}
+\tableofcontents
+\listoffigures
+\begin{multicols}{2}
+    \input{txt/main}
+    \bibliography{paper}
+    \bibliographystyle{unsrt}
+\end{multicols}
+\end{document}
