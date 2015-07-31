@@ -5,32 +5,32 @@ sense, like foreign words or parts of a map) into individual cards, which in
 part constitute a deck of facts about a given topic. The user plays through the
 deck by going through each card and stating how easy it was to recall the fact.
 The software then replays cards depending on how good or bad the recall was
-until some treshold of recollection has been met. Bad recall would result in the
-card appearing more often, and vice versa. This algorithm is inspired by the
-SuperMemo system written in the 1980's. The intuition is that we reinforce
+until some threshold of recollection has been met. Bad recall would result in 
+the card appearing more often, and vice versa. This algorithm is inspired by the
+SuperMemo system written in the 1980s. The intuition is that we reinforce
 learning by recalling something just as we are about to forget about it.
 
 Users are allowed to share, amend, or extend existing decks. While Anki
 primarily exists for the purpose of individual learning, the composable and
-open-source format allows for others to take part in the learning experience.
-The software has enjoyed great popularity amongst several groups, most notably
-learners of foreign languages.
+free software format allows for others to take part in the learning 
+experience. The software has enjoyed great popularity amongst several groups, 
+most notably learners of foreign languages.
 
 Anki is available both as a desktop client and through a web interface
-(AnkiWeb). However, while the latter easily allows for online sharing of decks,
+(AnkiWeb). While the latter easily allows for online sharing of decks,
 it doesn't allow for importing them. This is because it only synchronises with
 the desktop client. This highlights the challenges faced by desktop and web
 clients with different capabilities, and the value of isomorphic
 implementations.
 
 The desktop client of Anki will therefore be the main focus of this evaluation,
-as it is the only full implementation of the system. Similar softwares in the
+as it is the only full implementation of the system. Similar software in the
 same area are Supermemo and Fluxcards.
 
 \subsubsection{Expressiveness}
 
-Anki allows for the creation of (decks of) flash cards using standard HTML
-components with CSS for styling. Thus, users are able to enrich cards with
+Anki allows for the creation of (decks of) flashcards using standard HTML
+components with CSS styling. Thus, users are able to enrich cards with
 customised formatting, sound, and video. The users are also able to record their
 own voice (and repeat sounds) during playthrough. This offers an interactive
 experience to the end-user. Because HTML and CSS are relatively flexible and
@@ -45,22 +45,23 @@ Anki composable, and since the technologies are rather common (at least HTML),
 users can make relatively simple changes without any major obstacles.
 
 However, Anki is considered to have a poor UI interaction story for common
-scenarios: "Anki is a mature product, but its interface can seem unintuitive at
-first."[1]
+scenarios: ``Anki is a mature product, but its interface can seem unintuitive 
+at first.''[1] % TODO
 
 An example of a problematic story is the rather common case of wanting to share
-a deck. This usually has to be done through AnkiWeb, a free cloud service, which
-allows the user to download new decks made by other users. However, no such
-suggestion is made to the user. Thus, the social dimension of Anki is
-deemphasised.
+a deck. This usually has to be done through AnkiWeb, a free online service, 
+which allows the user to download new decks made by other users. However, no such
+suggestion is made to the user. Thus, the social dimension of Anki is 
+downplayed.
 
-Likewise, when using the software for the first time, the user is greeted by a
-shallow window with a single deck. No explanation of Anki or its algorithm is
-given. The user can click a simple built-in test deck to play through it, but
-this is not suggested by the software, and the deck does not showcase Anki's
-capabilities either (for example the use of rich media or LaTeX equations).
+Similarly, when using the software for the first time, the user is greeted by 
+a shallow window with a single deck. No explanation of Anki or its algorithm 
+is given. The user can click a simple built-in test deck to play through it, 
+but this is not suggested by the software, and the deck does not showcase 
+Anki's capabilities either (for example the use of rich media or LaTeX 
+equations).
 
-Other examples include the main window, which has both a menu-bar and some
+Other examples include the main window, which has both a menu bar and some
 buttons. One of the buttons suggests that the user might be able to import new
 decks, but turns out to be about constructing new decks.
 
@@ -69,28 +70,30 @@ non-trivial querying of all the decks in use, with numerous built-in categories
 and tags for distinguishing them (be it difficulty, topic, or the decks
 scheduled for today). Also, this rich view is not offered in AnkiWeb, so there's
 an inherent divide in the capabilities of searching already imported decks and
-looking for new ones, limiting explorability.
+looking for new ones, limiting the ability to explore.
 
 \subsubsection{Misc}
 
 \begin{itemize}
 \item AnkiWeb allows for synchronization and sharing of card decks (as files) using
-  a free cloud service. It is also able to play through the decks, but not
+  a free online service. It is also able to play through the decks, but not
   import them from stand-alone files.
 \item Freely licensed under the terms of the GNU AGPL v3+. Sub-components are
-  licensed under a variety of licenses, mostly GPL and flavours of BSD/MIT.
+  licensed under a variety of licenses, mostly GPL and flavours of BSD/MIT 
+  licences.
 \item All art assets are freely licensed. The logo in particular is also GNU AGPL
   v3+, but with a fair-use option for blogs, news outlets etc.
-\item Universal design?
+\item Universal design? % TODO
 \end{itemize}
 
 \subsubsection{Takeaway points}
 
 \begin{itemize}
-\item Anki offers spaced learning, which might be an interesting way to improve
-  recall and strengthen comprehension.
-\item The simple metaphor (a deck of flash cards) has been proven intuitive (SOURCES
-  XXX) and easy to implement, as well as explain to users.
+\item Anki offers spaced repetition learning, which might be an interesting 
+  way to improve recall and strengthen comprehension.
+\item The simple metaphor (a deck of flashcards) has been proven intuitive 
+  (SOURCES
+  XXX) and easy to implement, as well as explain to users. % TODO
 \item Anki's use of HTML elements provides a universal container format and
   facilitates sharing. However, the web interface is very limited, and while it
   does allow for sharing, it does not allow for importing decks, thus not
@@ -99,5 +102,5 @@ looking for new ones, limiting explorability.
   provide enough directions or examples for effective use. Modal dialogues and
   context switching might provide a more elegant solution for capturing common
   usage patterns (compared to displaying the full set of choices and categories
-  available to the user, e.g. in the library view).
+  available to the user, e.g.\ in the library view).
 \end{itemize}
