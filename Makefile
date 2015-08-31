@@ -8,3 +8,5 @@ paper.pdf: paper.tex
 clean:
 	latexmk -CA
 
+watch:
+	latexmk paper.tex -pdf -pvc
