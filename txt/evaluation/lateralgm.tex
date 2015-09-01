@@ -1,0 +1,64 @@
+\subsection{Evaluation of LateralGM and ENIGMA}
+
+LateralGM\footnote{https://github.com/IsmAvatar/LateralGM} is a free tool to 
+author and edit games. It aims to be compatible with the file formats of Game 
+Maker and the newer GameMaker: Studio, and has a user interface very similar 
+to that of Game Maker. To compile and run games, LateralGM normally interfaces 
+with ENIGMA\footnote{http://enigma-dev.org/}, which is a compiler and runtime 
+system aiming to be backwards compatible with Game Maker games.
+
+\subsubsection{Expressiveness}
+LateralGM and ENIGMA form a multi-genre game authoring tool with features that 
+make it easy to use for beginners, but also powerful for advanced users. 
+Although the scripting language has some support for 3D graphics 
+\cite{enigma3d}, the software mainly focuses on 2D graphics and gameplay.
+
+LateralGM presents the game as a set of different resources, including sounds, 
+background images, sprites, scripts, fonts, objects, and rooms. Users may edit 
+sounds and images within a game using external programs.
+
+Objects may be programmed to act on various events. Events include the "step" 
+event (fired once in every update cycle, e.g., 30 times per second), user 
+input, collision detection, timers, action-/script-triggered events, and many 
+more \cite{lgmevents}. Each event can be programmed using either drag-and-drop 
+actions or scripts. The set of drag-and-drop actions is extensive and includes 
+basic flow control, and may also be extended with action libraries.
+
+Each object can be set to use a possibly animated sprite, which causes each 
+instance of the object to be drawn with that sprite. This sprite may also be 
+used for collision detection. The "draw" event is also available for producing 
+more advanced graphics. Objects may also be set as invisible, appearing in the 
+room editor and possibly providing collision detection with the associated 
+sprite, but not visible during gameplay.
+
+The room editor allows users to graphically place instances of objects, either 
+freely or in a configurable grid, inside a room as they will appear in the 
+game. The user may define multiple layers of background and foreground images, 
+either as whole images, possibly repeated or stretched, or in the form of 
+placeable tiles, using the image as a tileset.
+
+LateralGM loads and saves games in the proprietary file formats of various 
+versions of Game Maker. These file formats are not officially documented, but 
+have been reverse-engineered by LateralGM developers \cite{lgmformats}. While 
+LateralGM and ENIGMA aim to be compatible with both current and earlier 
+versions of Game Maker and GameMaker: Studio, several of these versions of 
+Game Maker have incompatibilities between themselves. Not all features are 
+implemented in LateralGM and ENIGMA, and development is struggling to catch up 
+with later versions while still being compatible with earlier versions.
+
+\subsubsection{Ease of use}
+LateralGM lets users make simple games without writing a single line of code, 
+using only drag-and-drop actions and graphically placing object instances in 
+each room. Parametres to the actions may be given as scripting language 
+expressions, providing a smooth learning curve from simple actions to the full 
+scripting language.
+
+\subsubsection{Takeaway points}
+
+\begin{itemize}
+\item Drag-and-drop can be used together with a written programming language 
+    for a very smooth learning curve for non-programmers.
+\item Trying to keep up compatibility with proprietary tools and undocumented 
+    file formats is difficult and may take more development resources than 
+    available.
+\end{itemize}
