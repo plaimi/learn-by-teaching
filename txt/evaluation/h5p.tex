@@ -1,0 +1,130 @@
+\subsection{H5P}
+
+H5P is a standard allowing for reusable, portable e-learning modules. It does so
+by providing shims for different CMSs, a file format specification for
+distribution, as well as standard \textit{content types} with built-in editors.
+
+The value proposition of H5P is that it integrates nicely with existing
+infrastructure like databases and view layers, enabling developers to focus on
+developing their modules.\cite{h5pwhy} That is, it reduces the ceremony needed
+to get going. Moreover, its portability provides a much-wanted ease of
+deployment for site owners, as well as a bigger market for developers.
+
+Five issues have been raised as part of the Learning by Teaching (LBT) project.
+LBT seeks to provide a canvas which offers a visual way for users, not
+developers, to creat their own e-learning modules. The issues raised are:
+
+\begin{itemize}
+\item Are the abstractions offered by H5P powerful enough?
+\item Are the abstractions low- or high-level enough for our purposes?
+\item Could LBT generate valid H5P modules?
+\item Could LBT import (other) H5P modules?
+\item Could LBT offer a new way of composing H5P?
+\end{itemize}
+
+This evaluation primarily seeks to (partially) answer most of these questions.
+It does not in particular seek to provide concrete improvements to the H5P
+specification, neither does it guarantee that H5P is (not) amenable to any
+purpose.
+
+\subsubsection{Are the abstractions offered by H5P powerful enough?}
+
+At its very core, H5P offers a contract for libraries, which might function as
+full-blown applications, stand-alone libraries, or APIs for any combination of
+the above. 
+
+This is done in part by making the libraries document their semantics
+(`semantics.json`), that is the properties (data structure) that is used to set
+up the application. Each property is described by its name, as well as its type.
+Different content types have different semantic requirements: For example, the
+`list` (ordered group) semantic type requires the name of a single entity in it
+(`entity`). This information is used by the generic editor to allow users to
+easily customise the library.
+
+H5P also provides a container format that takes care of ceremony, like loading
+the appropriate CSS and JS files, as well as providing useful metadata like the
+version and name of the library. This format includes a JS class which libraries
+extend to hook into H5P. Applications are required to implement an `attach`
+method, which accepts the id of the container in which to attach the module.
+
+Of particular interest for LBT, it provides a central event dispatcher
+(`H5P.EventDispatcher`)\cite{h5pdispatch}, which is used to dispatch actions
+within H5P. Thus, like Elm's ports or Facebook React's Flux
+architecture/dispatcher, a synchronous interface for internal communication is
+provided, which might prove useful for multi-component systems.
+
+Beyond this, H5P leaves the library developers plenty of room to expand. The H5P
+standard is pretty much "open world" and doesn't necessarily limit the structure
+of functionality of the JavaScript libraries it wraps, enabling developers to
+create arbitrarily complex software.
+
+However, it should be noted that H5P is still dependent upon professionalt
+developers, and doesn't provide primitives that necessary make any sense for
+ordinary users. Therefore, the standard by itself doesn't preclude a more
+user-oriented canvas system like LBT.
+
+In conclusion, H5P doesn't itself provide the needed abstractions necessary, but
+doesn't hinder them from being developed. LBT targets a different demographic.
+
+\subsubsection{Are the abstractions low- or high-level enough for our purposes?}
+
+LBT is still in its early stages. Thus, it is not known how low-level the
+abstractions need to be to faciliate such a system. However, the problem domain
+is vastly different: Yes, both LBT and H5P might rely on defining different data
+types, and need to be able to express common scenarios within digital learning
+situations. But whereas H5P seems to be primarily geared towards providing
+consistent deployment stories for adminstrators and consistent semantics for
+developers, LBT seeks to a provide a new type of user experience, namely
+creating new e-modules. The latter is probably not general enough that it
+warrants inclusion in the H5P standard itself, but enhances the experience of
+e-learning production for a new demographic. 
+
+In conclusion, this question does not seem to have a good answer for the time
+being. Rather, it is sufficient to suggest that the abstractions for H5P and LBT
+would be different. And because H5P allows developers great freedom in
+developing their application, as long as they follow the contract, this
+shouldn't prove to be a problem.
+
+\subsubsection{Could LBT generate valid H5P modules?}
+
+Yes. As already noted, H5P doesn't limit any system it wraps in its container
+format. Therefore, any functioning JavaScript system could in principle be
+embedded within a H5P module, provided it only operates on a single node (due to
+the complexity and performance implications of coordinating DOM operations on
+overlapping elements).
+
+\subsubsection{Could LBT import (other) H5P modules?}
+
+Yes, provided a shim is written that is able to parse the semantic definition of
+the H5P module and use it in some meaningful way. In this case, LBT would do not
+much more than the generic editor provided by H5P, but might provide a different
+user story and target new demographics not yet reached by H5P. (Students or
+junior high teachers aren't known for adminstrating installations of Wordpress
+or Drupal, at least not widely).
+
+\subsubsection{Could LBT offer a new way of composing H5P?}
+
+H5P has no composition guarantees, and resorts to Design by Contract (DbC) for
+composite systems.\cite{h5pdbc} This does nothing to ensure a uniform
+communication standard, which ensures flexibility, but does not provide a
+uniform interface. The specification itself admits that this is due to the lack
+of interfaces in JavaScript. Thus, the contracts are more by politeness and not
+by obligation, potentially creating weak implementations.
+
+Therefore, there is obviously definitely value to be provided by a system
+providing more stringent, verifiable contracts between components, for example
+using a more powerful type system than the one found in JavaScript. This might
+in turn result in more reusable and robust apps. Also, because H5P effectively
+provides no composition contracts, this system might function as a sandbox and
+provide useful feedback should future versions of H5P seek to provide more
+formal requirements for composite modules.
+
+\subsubsection{Minor issues raised}
+
+\begin{itemize}
+\item H5P provides no standard for sub-module inheritance/reuse of content, as the
+system only has a notion of full H5P modules. How does two modules refer to
+the same data?
+\end{itemize}
+
+
