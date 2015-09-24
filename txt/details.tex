@@ -1,0 +1,96 @@
+\subsection{Concept }
+We propose a canvas system wherein the user may drag e-learning modules from a 
+toolbox, and drop them onto the canvas. The modules may be empty or finished. 
+If they are empty, then the authoring tool for said module opens. If it is not 
+empty, then the user may further edit it if they wish.
+
+To schedule data and control flow, the user drags arrows between the modules 
+on the canvas. These associations may be customised. ``If the user finished 
+[module a] with a score of more than 80\% correct, then direct them to [module 
+b]; if the user did not, then direct them to [module c]''.
+
+Compositions are modules themselves.
+
+When a user wants to compose modules, users may search for which modules to 
+use. We want to encourage reuse and remixing rather than novelties. 
+Consequently we focus the search option before the ``author new module'' 
+option. As another incentive, when a user authors a new module, we track 
+reuses and remixes. Users may in a presentation of all their authored modules 
+see how many reuses and remixes have occurred, and follow links to these. If 
+they like a remix they may merge the changes between the remix and the 
+original.
+
+Compositions may be derived in whole, and further developed by another author. 
+Users may merge modifications to these as well. Consider an English Language 
+test for a school curriculum. A teacher at a different school (or the same 
+school next year) may want to reuse this test since they have the same 
+curriculum. But they might furthermore want to modify it. If the original 
+author finds these modifications useful, then it may merge them to the 
+original.
+
+Avatars have been successfully used before to motivate 
+children\cite{gossen2012search}. We propose the use of an avatar for 
+explaining the interface and pointing out problems with the compositions, such 
+as integrity issues, e.g.\ ``the composition never ends'', or continuity 
+warnings, e.g.\ ``this module is visited two times'',. The avatar's appearance 
+may be customised.
+
+To encourage certain behaviour, the avatar may reward positive behaviour with 
+a badge, e.g.\ ``200 remixes!'' --- in total, or ``remixed 5 times!'' --- for 
+one specific module.
+
+Punishing bad behaviour rarely works, and punishment is easily evaded. Instead 
+we simply prohibit bad behaviour. Chatting is done via the avatars. To 
+communicate with another user, you visit their profile and click on their 
+avatar to bring up a dial menu for constructing a query like ``you should add 
+[module] to your composition!'', or ``I like this module!''. This makes 
+localisation much easier since these set sentences may be translated 
+accurately. It also makes our system safe for 
+children\cite{sadler2012virtual}. This is a recent trend in computer games 
+such as Journey and Hearthstone for the same reasons. This eliminates hate 
+speech\cite{hearthstone}, which is not acceptable with a child audience.
+
+Users may, via their avatars as just described, encourage other users by 
+telling them that they like their modules. There is no way to dislike a 
+module, as that might be demotivating for children. Avatars as well as modules 
+may be favoured. The user's favourite modules and avatars are more easily 
+accessible than the rest.
+
+Users sign up with a log-on id and password, and optionally an email address 
+for recovering forgotten passwords. The users name their avatars which is then 
+their screen names. The avatar has a given name and a surname. There may be 
+duplicate names. People have duplicate names in real life too [citation 
+needed], and society hasn't collapsed yet.
+
+\subsection{Requirements}
+We place high usability requirements on our canvas system in order to enable
+school children to use it. Universal design is difficult with such a graphical 
+system, but of the utmost importance. Compromises shall err on the side of 
+caution and favour universal design.
+
+Dealing with children has implications. Tap actions should allow some slack 
+with bigger hit boxes than actual buttons and similar measurements. Splash 
+screens are bad, mkay. Turns out kids don't have that great an attention-span. 
+So get to the point quick as. These things are discussed in more detail in 
+Section~\ref{principles}.
+
+In order to encourage reuse and remixing, modules and assets are distributed 
+under a free licence, CC-BY-SA\@. This also sets a positive example for school 
+children to become good citizens of our society. Indeed so does the entire 
+project by being licensed as AGPL\@\cite{educational}.
+
+\subsection{Feature List}
+\begin{itemize}
+\item Canvas system
+\item Toolbox
+\item Search
+\item Favourite modules
+\item Favourite avatars
+\item Reuse and remix tracking
+\item Merging
+\item Avatars
+\end{itemize}
+
+\subsection{Functional Details}
+
+\subsection{Wireframes etc.}
