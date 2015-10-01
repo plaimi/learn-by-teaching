@@ -92,5 +92,71 @@ project by being licensed as AGPL\@\cite{educational}.
 \end{itemize}
 
 \subsection{Functional Details}
+\subsubsection{Frontend}
+For our canvas system and frontend in general we use the Elm programming 
+language\cite{czaplicki2012elm}.
+
+Elm is an immature language with several known 
+shortcomings\cite{smitsextreme}, but the more popular alternative JavaScript 
+is a mature language with even more known 
+shortcomings\cite{flanagan2006javascript}. Although early research suggests 
+that using Elm will not magically result in a better 
+product\cite{buist2014extending}, it does allow for purely functional 
+programming of denotational graphical interfaces\cite{czaplicki2012elm}, which 
+has several known advantages for interactive graphical 
+programs\cite{berntsen2014quest}. Elm itself has several specific advantages 
+as well --- and excellent tooling to boot\cite{kraeutmann2015functional}.
+
+Being an immature language, not all libraries we could possibly wish for are 
+readily available. Therefore accessing JavaScript directly is still necessary 
+at times. Thankfully, Elm comes with a sophisticated JavaScript foreign 
+functional interface\cite{elmports}. And if it becomes necessary to use 
+JavaScript libraries to interact with JavaScript primitives presently outside 
+of Elm's reach, we may fall-back on JavaScript for this.
+
+\subsubsection{Backend}
+For dealing with all things backend we use the Haskell programming 
+language\cite{marlow2010haskell}. Haskell is a mature and widely used 
+programming language with advantages similar to that of Elm, except more 
+advantages and more powerful advantages. Interesting advantages over Elm 
+include laziness for modularisation\cite{hughes1989functional}, typeclasses 
+for elegant ad-hoc polymorphism\cite{wadler1989make}, and an in general more 
+powerful and interesting type system\cite{jones2003wearing}. Lastly, Haskell 
+seriously equips you for all cost-models of parallelism and 
+concurrency\cite{jones2012future}.
+
+We write property laws and test these using 
+QuickCheck\cite{claessen2011quickcheck}, a well-established tool used in 
+industry\cite{arts2006testing}.
+
+Haskell, being a mature language, provides us with several useful libraries to 
+ensure a shorter time to market.
+
+\subsubsection{Reuse and remix}
+We want to encourage reusing and remixing. We define reuse to be using someone 
+else's module as-is, and remix to be using someone else's module with 
+modifications.
+
+Care must be taken not to merely give incentives for having your modules 
+reused and remixed by others, as this fosters a culture where being the author 
+of novelties is the most rewarding. Rewards should therefore be doled out more 
+handsomely for actually reusing and remixing than for authoring modules that 
+are successfully subsequently reused and remixed. This also makes sense since 
+the latter is rewarding passive behaviour, whilst the former rewards active 
+behaviour. We are not trying to sell the American Dream, but to encourage 
+sharing in order to achieve e-learning modules of the highest possible 
+quality.
+
+Having your module be reused and remixed is tracked and awarded recursively.
+
+\subsubsection{Other notes}
+We have chosen otters as avatars. plaimi's mascot is an otter, so this 
+decision is done partly for cohesive branding concerns, but primarily for the 
+same reasons it was chosen as plaimi's mascot in the first place: the otter is 
+a noted playful and social creature\cite{gordon1908otter}. It is furthermore 
+considered cute by the general population, but capable of being 
+ferocious\cite{belanger2011review}, which is appealing for the target 
+demographic as girls tend to prefer cute avatars, whilst boys prefer rude 
+avatars\cite{inal2006children}.
 
 \subsection{Wireframes etc.}
