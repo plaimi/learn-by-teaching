@@ -1,96 +1,89 @@
 \subsection{Evaluation of Memrise}
 
-Memrise is a flashcard-based learning system. The cards make use of (often
-crowd sourced) mnemonics combined with spaced repetition (akin to Duolingo and
-Anki) to augment the learning experience. It is unique in part due to its
-openness regarding its techniques and its close ties with academic researchers,
-who are allowed to analysis its datasets.
+Memrise\footnote{\url{http://www.memrise.com}} is a flashcard-based learning 
+system. The cards make use of (often crowd sourced) mnemonics combined with 
+spaced repetition (akin to Duolingo and Anki) to augment the learning 
+experience. It is unique in part due to its openness regarding its techniques 
+and its close ties with academic researchers, who are allowed to analysis its 
+datasets.
 
 Memrise itself suggests three basic techniques:\cite{memrise}
 
 \begin{itemize}
 
-\item textbf{Elaborate encoding.} That is, the construction of cognitive structures of
-  already known material that new knowledge might "attach" itself to. For
-  example, taxonomies (like the colours red, white, blue) are easier to remember
-  than a random list (astronaut, velvet, cigar). To this end, Memrise uses
-  crowd sourcing (with machine-learning techniques) to suggest "mems", which 
-  are the aforementioned cognitive structures to boost learning.
+\item \textbf{Elaborate encoding.} I.e., the construction of cognitive 
+  structures of already known material that new knowledge might "attach" 
+  itself to. E.g., taxonomies (like the colours red, white, blue) are easier 
+  to remember than a random list (astronaut, velvet, cigar). To this end, 
+  Memrise uses crowd sourcing (with machine-learning techniques) to suggest 
+  "mems", which are the aforementioned cognitive structures to boost learning.
 
 \item \textbf{Choreographed testing}, which test recall and comprehension. Memrise varies
   between simple one-off challenges ("casa = ?") and multiple-choice questions
   to keep things interesting.
 
-\item \textbf{Scheduled reminders}, which is basically spaced learning. As
-  Memrise themselves state: "Research suggests that reminders are most effective
-  when they occur just before a memory fades completely and that successive
-  reminders should be separated by longer and longer intervals. "\cite{memrise}
+\item \textbf{Scheduled reminders}, which is their implementation of spaced 
+    learning.
 
 \end{itemize}
 
 Research around — or by — Memrise mostly revolves around the benefits of 
-testing, error generation (vis-a-vis inerrant learning), and how spacing 
-affects the efficacy of the learning programme. In short:
+testing, error generation (vis-à-vis inerrant learning), and how spacing 
+affects the efficacy of the learning programme.
 
-\begin{itemize}
+Testing is the act of challenging retention while studying, which is 
+beneficial as part of the learning process. There is no consensus as to why it 
+works, but some explanations include that it increases the storage strength of 
+memory, and that it generates additional cues that creates (potentially more 
+efficient) routes through memory\cite[p.6]{potts2014benefit}.
 
-\item Testing is the act of challenging retention/comprehension while studying,
-  which is beneficial as part of the learning process. There is no consensus as
-  to why it works, but some explanations include a) it increases the storage
-  strength of memory, b) it generates additional cues that creates (potentially
-  more efficient) routes through memory.\cite[p.6]{potts2014benefit}
+Generation (with feedback) is an active form of learning, and requires the
+student to complete something, for example a sentence ("Lisa is a \_\_\_"),
+before getting to know the answer. This is contrasted to reading, where the
+student absorbs textual material and definitions, and multiple choice, which
+amongst other things tests the ability of the student to see how the different
+alternatives relate to each other (finding the odd one out etc.).
 
-\item Generation (with feedback) is an active form of learning, and requires the
-  student to complete something, for example a sentence ("Lisa is a \_\_\_"),
-  before getting to know the answer. This is contrasted to reading, where the
-  student absorbs textual material and definitions, and multiple choice, which
-  amongst other things tests the ability of the student to see how the different
-  alternatives relate to each other (finding the odd one out etc.).
+Errant learning has been thought to be detrimental to learning as people
+recall their errors to a greater extent than their correct
+answers\cite{potts2014benefit}, but this research has mostly been done with
+already memory-impaired populations, which might have different requirements.
+Inerrant learning does not seem to be as effective as error generation: 
+``\dots'' generating responses followed by feedback is helpful to memory 
+even when many errors are generated, compared with inerrant studying without
+generation\cite[p.54]{potts2014benefit}.
 
-\item Errant learning has been thought to be detrimental to learning as people
-  recall their errors to a greater extent than their correct
-  answers\cite{potts2014benefit}, but this research has mostly been done with
-  already memory-impaired populations, which might have different requirements.
-  Inerrant learning does not seem to be as effective as error generation: 
-  ``\dots'' generating responses followed by feedback is helpful to memory 
-  even when many errors are generated, compared with inerrant studying without
-  generation."\cite[p.54]{potts2014benefit}
-
-\item Generating errors may benefits vocabulary learning even when there are 
-  no established associations to the items in 
-  question\cite[p.54]{potts2014benefit}. While completing sentences appear to 
-  have the biggest advantage over only reading, other types of generation also 
-  improves test scores when compared to reading by 
-  itself\cite[p.73]{benassi2014applying}.
-
-\end{itemize}
+Generating errors may benefit vocabulary learning even when there are no 
+established associations to the items in 
+question\cite[p.54]{potts2014benefit}. While completing sentences appear to 
+have the biggest advantage over only reading, other types of generation also 
+improves test scores when compared to reading by 
+itself\cite[p.73]{benassi2014applying}.
 
 Several experiments have been designed to test assumptions regarding
 these models. They are mostly language-orientated (a good fit for a 
 programming language!), and might use techniques like archaic words (which are 
-surely unknown for most test subjects) to provide a "clean slate" for testing 
-comprehension and retention of definitions. \cite{potts2014benefit} shows 
-three judgement of learning experiments, in which participants needed to 
-predict their likelihood of remembering the item they studied -- i.e.\ their 
-ability to retain the information they picked up. The goal of this research 
-was to establish whether participation perception of learning would be 
-influenced by error generation. It appears that it will be. Participants 
-seemingly perceived generate items as more difficult to learn. This may have 
-lead to the participants putting in more effort to learn them, which may in 
-turn lead to a higher retention.
+certain to be unknown for most test subjects) to provide a "clean slate" for 
+testing comprehension and retention of definitions. Research shows that 
+participations' perception of learning is influenced by error generation, and 
+that participants seemingly perceive generate items as more difficult to 
+learn, which may lead to participants putting in more effort to learn the more 
+difficult items, which in turn may lead to higher 
+retention\cite{potts2014benefit}.
 
 \subsubsection{Expressiveness}
 
 More or less any knowledge that needs to be internalised can fit within the
 style of testing offered by Memrise. Users are allowed to create their own
-courses, which may contain multimedia levels. For example, users may embed Vines
-inside mems to boost retention. 
+courses, which may contain multimedia levels. For example, users may embed 
+videos from Vine\footnote{\url{https://vine.co/}} inside ``mems'' to boost 
+retention. 
 
 \subsubsection{Ease of use}
 
-Easy to use interface with a few, mostly obvious buttons. Flow is never a 
-problem. Interactive modals are provided and guide the user through things 
-like creating mems for their own courses and so on.
+Memrise offers an easy to use interface with a few, mostly obvious buttons. 
+Flow doesn't seem to be problematic. Interactive modals guide the user through 
+things like creating ``mems'' for their own courses and so on.
 
 \subsubsection{Takeaway points}
 

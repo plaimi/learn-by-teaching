@@ -1,9 +1,11 @@
 \subsection{H5P}
 
 H5P is a standard allowing for reusable, portable e-learning modules. It does 
-so by providing plug-ins for Drupal, Wordpress, \& Joomla, along with a file 
-format specification for distribution, as well as standard \textit{content 
-types} with built-in editors.
+so by providing plug-ins for Drupal\footnote{\url{https://www.drupal.org/}}, 
+WordPress\footnote{\url{https://wordpress.org/}}, and 
+Joomla\footnote{\url{https://www.joomla.org/}}, along with a file format 
+specification for distribution, as well as standard \emph{content types} with 
+built-in editors.
 
 The value proposition of H5P is that it integrates nicely with existing
 infrastructure like databases and view layers, enabling developers to focus on
@@ -13,24 +15,16 @@ deployment for site owners, as well as a bigger market for developers.
 
 Before deciding whether to use H5P we needed to evaluate five core issues.
 
-\begin{itemize}
-\item Are the abstractions offered by H5P powerful enough?
-\item Are the abstractions high-level enough for our purposes?
-\item Can we generate H5P modules?
-\item Can we import H5P modules?
-\item Can we offer a new way of composing H5P modules?
-\end{itemize}
-
 \subsubsection{Are the abstractions offered by H5P powerful enough?}
 
 At its very core, H5P offers a contract for libraries, which might function as
-full-blown applications, stand-alone libraries, or APIs for any combination of
-the above. 
+full-blown applications, stand-alone libraries, or application programming 
+interfaces for any combination of the above. 
 
 This is done in part by making the libraries document their semantics
 (`semantics.json'), i.e.\ the properties (data structure) that are used to set
 up the application. Each property is described by its name, as well as its type.
-Different things have different semantic requirements: For example, the
+Different things have different semantic requirements: E.g., the
 `list' (ordered group) semantic type requires the name of a single entity in it
 (`entity'). This information is used by the generic editor to allow users to
 easily customise the library.
@@ -42,11 +36,11 @@ class which libraries extend to hook into H5P. Applications are required to
 implement an `attach' method, which accepts the identity of the container in 
 which to attach the module.
 
-Of particular interest for us is the central event dispatcher
-(`H5P.EventDispatcher')\cite{h5pdispatch}, which is used to dispatch actions
-within H5P. Thus, like Elm's ports\cite{elmports} or Facebook React's Flux
-architecture/dispatcher\cite{fluxdispatch}, a synchronous interface for 
-internal communication is provided, which might prove useful for 
+Of particular interest for us is the central event dispatcher 
+(`H5P.EventDispatcher'), which is used to dispatch actions within 
+H5P\cite{h5pdispatch}. Thus, like Elm's ports\cite{elmports} or Facebook 
+React's Flux architecture/dispatcher\cite{fluxdispatch}, a synchronous 
+interface for internal communication is provided, which might prove useful for 
 multi-component systems.
 
 Beyond this, H5P leaves the library developers plenty of room to expand. The 
@@ -68,14 +62,14 @@ Given our emphasis on an intuitive user-interface for liberating the BOP, H5P
 quite frankly doesn't cut it for the time being. But even if H5P is not nice 
 enough to use (at the moment) for non-technical users turned authors, it 
 \emph{does} play nice with other software --- or, at the very least, it stays 
-out of the way. This is \emph{very} desirable for us.
+out of the way. This is \emph{very} desirable to us.
 
 Once we have H5P modules ``up and running'', so to speak, there's nothing 
 stopping us from moving ahead with other kinds of e-learning modules. There is 
 furthermore nothing precluding H5P being improved in the future; we could even 
 conceivably do that ourselves.
 
-But the honest truth is that H5P is not good enough for our intended target 
+The honest truth is that H5P is not good enough for our intended target 
 demographic. But it \emph{is} free software that integrates nicely and may be 
 improved in the future. We'll take it.
 
@@ -113,8 +107,7 @@ effectively provides no composition contracts, this system might function as a
 sandbox and provide useful feedback should future versions of H5P seek to 
 provide more formal requirements for composite modules.
 
-\subsubsection{Other raised H5P issues}
-
-H5P provides no standard for sub-module inheritance/reuse of content, as the 
-system only has a notion of full H5P modules. How does two modules refer to
-the same data?
+One related problem is that H5P provides no standard for sub-module 
+inheritance/reuse of content, as the system only has a notion of full H5P 
+modules. We must figure out a way for several modules to refer to the same 
+data.

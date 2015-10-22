@@ -11,6 +11,7 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{environ}
+\usepackage{pdfpages}
 % Environment to scale things
 \NewEnviron{scale}[1]{%
   \begin{tikzpicture}
@@ -54,9 +55,8 @@
 
 % Document title
 \title{\vspace{-15mm}\fontsize{16pt}{10pt}\selectfont
-\textbf{Enabling Learning By Teaching: Intuitive Composing of E-Learning 
+\textbf{Enabling Learning by Teaching: Intuitive Composing of E-Learning 
 Modules}}
-
 
 % Document authors
 \author{
@@ -68,16 +68,35 @@ Modules}}
 \end{tabular}
 }
 
+\graphicspath{{fig/}}
+
 \begin{document}
 \maketitle
 \begin{abstract}
 \noindent \input{txt/abstract}
 \end{abstract}
 \tableofcontents
-%\listoffigures
+\listoffigures
 \begin{multicols}{2}
     \input{txt/main}
 \end{multicols}
 \bibliography{paper}
 \bibliographystyle{unsrt}
+\newpage
+\appendix
+\section{Design document}
+\label{design}
+This is the design document authored for our system. It is authored by a user 
+experience expert, Lene Thuseth, as we felt the interface emphasis warranted 
+professional involvement.
+
+While it certainly does not cover all of our ideas, it does showcase the core 
+subset of what we envision in a minimum viable product. More importantly, it 
+brings our user-interface research observations to life, and shows the 
+fundamental interaction pattern and establishes the ever intangible 
+``look'n'feel'' of our system. The shapes, colours, fonts, and overall 
+presentation is given careful thought. This is all described and explained in 
+the document.
+
+\includepdf[pages={-},landscape=true]{pdf/LBT_DesignDocu_v3.pdf}
 \end{document}

@@ -1,16 +1,15 @@
-We have reviewed related services that offer learning experiences. We try to 
-apply these findings in producing a system fit for students and educators 
-alike.
-
-But At first we wish to discuss \textit{learning} itself. A common technique 
-used in most of these systems is \textbf{spaced repetition} combined with 
-\textbf{testing}, i.e.\ the pacing of repetition throughout time. This 
-approach is well-proven by research, and could be implemented both as a part 
-of our services (allowing module authors to apply it to their own students), 
-or as a part of the experience of learning the tools. An example might be: 
-`After 5 days, please repeat this factoid and test the student.` Of course, 
-such an approach might prove cumbersome, and techniques like machine learning 
-might automate it in some meaningful fashion using a data-oriented approached.
+We wish to discuss \textit{learning} itself, and how this knowledge affects 
+our system. A common technique used in most of these systems is \textbf{spaced 
+repetition} combined with \textbf{testing}, i.e.\ the pacing of repetition 
+throughout time. This approach is well-proven by research, and could be 
+implemented both as a part of our services (allowing module authors to apply 
+it to their own students), or as a part of the experience of learning the 
+tools. An example might be: `After 5 days, please repeat this factoid and test 
+the student.` Of course, such an approach might prove cumbersome, and 
+techniques like machine learning might automate it in some meaningful fashion 
+using a data-oriented approached. Reminders are most effective when occurring 
+just before the memory fades. Successive reminders will consequently be 
+separated at longer and longer intervals\cite{memrise}.
 
 In testing, there exists mainly three techniques for assessment:
 
@@ -21,21 +20,21 @@ least one of them should be true. Often one or more of the alternatives are `the
 odd one out', to test the student's ability to discriminate irrelevant 
 concepts.
 \item Generation, where the user is made to produce something, for example
-filling in a word. As noted by \cite{potts2014benefit}, this technique is 
-highly efficient with regards to retention, especially when combined with 
-quick feedback.
+filling in a word. This technique is highly efficient with regards to 
+retention, especially when combined with quick 
+feedback\cite{potts2014benefit}.
 \end{itemize}
 
 Thus, we consider generation. An example of this might be generating a formally
 valid blueprint of some e-module, and asking the user what it does. Or it might
 be to make the user connect the relevant parts to make it work as desired. Thus,
 we foster true comprehension of the system mechanics and avoid cramming. As
-noted in the literature in the Memrise review, errorful generation (that is
-getting it wrong) might actually be benefitial, and something we should not
-punish the user for doing. Rather, we suggest to embrace it and make failure as
-smooth as possible, with quick iterations.
+noted in the literature in the Memrise review, errorful generation might 
+actually be beneficial, and the user should not be punished for making 
+mistakes. Rather, we suggest to embrace it and make failure as smooth as 
+possible, with quick iterations.
 
-A huge part of any learning system is the \textit{metaphor}, or the user
+A big part of any learning system is the \textit{metaphor}, or the user
 interface. The system needs to provide some incentive for the user to perform
 some action. Thus, the user interface will always be a question of demographics.
 We suggest that the user interface should be amenable to at least some
@@ -44,22 +43,21 @@ demographic. Some concrete suggestions are:
 
 \begin{itemize}
 \item The user interface needs to take into consideration the rather poor motor
-skills of young children.\cite{kidsquora} Thus, tap actions should not be that
+skills of young children\cite{kidsquora}. Thus, tap actions should not be that
 precise or responsive, but instead allow for some slack. For example, multiple
 taps should not result in multiple windows, but rather provide a time buffer for
 the action to launch. Also, the hit box of buttons should be greater than their
 actual size.
-\item Avoid splash screens,\cite{kidsluke} and in general get to the point as quickly as
+\item Avoid splash screens\cite{kidsluke}, and in general get to the point as 
+quickly as
 possible. Thus, it might be better to provide a simpler, but usable interface
-rather than a complete experience first-hand. For example, one might wish to
-avoid modal dialogues, as they provide children which textual choice, which they
+rather than a complete experience first-hand. E.g.\ one may wish to avoid 
+modal dialogues, as they provide children which textual choice, which they
 might not understand or be interested in.
 \item To provide some sense of continuity, and also a way of accumulating
-rewards, the user might construct an avatar. This concept is known from video
+rewards, the user constructs an avatar. This concept is known from video
 games, and has already been suggested to be a viable way of familiarising
-children with complicated services like search engines.
-In \cite{gossen2012search}, an avatar helps the child search the web, and the
-results are put into a `treasure chest.`
+children with complicated services like search engines\cite{gossen2012search}.
 \end{itemize}
 
 Unfortunately, we were not able to locate high-quality sources of research in
@@ -69,7 +67,8 @@ potentially missing out on a great deal of useful data. On the other hand,
 this means we have the unique opportunity to not only be innovators, but also 
 inspiring flagships.
 
-\textbf{Takeaway points}, based on previous discussion and the reviews:
+\textbf{Takeaway points}, based on previous discussion and the reviews in 
+Section~\ref{related}.
 
 \begin{itemize}
 \item Spaced learning with testing using generation fosters comprehension and
@@ -96,4 +95,5 @@ different approaches to authoring.
 
 What we are eventually getting at is the need for high quality control in what 
 modules we allow, and likely a fair bit of customisation of the ones we do end 
-up allowing.
+up allowing. Alternatively new module authoring software may be developed 
+altogether.
